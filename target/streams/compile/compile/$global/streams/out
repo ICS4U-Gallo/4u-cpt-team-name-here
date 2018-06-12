@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\doubleAbatteryman\Abtin\4u-cpt-team-name-here\app\views\Menu\linear.scala.html:1:1: identifier expected but $XMLSTART$< found.[0m
+[0m[[0m[31merror[0m] [0m[0m@(equation : Linear equation)[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\doubleAbatteryman\Abtin\4u-cpt-team-name-here\app\views\Menu\linear.scala.html:6:2: ']' expected but eof found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
