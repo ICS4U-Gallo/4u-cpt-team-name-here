@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/conf/routes
-// @DATE:Mon Jun 11 13:15:18 EDT 2018
+// @DATE:Wed Jun 13 13:50:22 EDT 2018
 
 import play.api.mvc.Call
 
@@ -12,11 +12,29 @@ import _root_.play.libs.F
 package controllers {
 
   // @LINE:10
-  class ReverseMenuController(_prefix: => String) {
+  class ReverseLinearController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:14
+    def solveM(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "menu/solveM")
+    }
+  
+    // @LINE:13
+    def show(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "menu/show")
+    }
+  
+    // @LINE:12
+    def save(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "menu/linear")
+    }
   
     // @LINE:11
     def linear(): Call = {

@@ -1,19 +1,28 @@
 package models;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Linear {
-    private double x;
-    private double y;
-    private double b;
-    private double m;
-    private double answer = 0.0;
+    public int x = 0;
+    public int y = 0;
+    public int b = 0;
+    public int m = 0;
 
-    public Linear (double x, double y, double b, double m){
+    public Linear(){}
+    public Linear(int x, int y, int b, int m){
+        this.x = x;
+        this.y = y;
+        this.b = b;
+        this.m = m;
+    }
 
+    public void solveM(){
+        this.m = (this.y-this.b)/this.x;
     }
-    public void solveM(double x, double y, double b){
-        x = this.x;
-        y = this.y;
-        b = this.b;
-        this.answer = (y-b)/x;
+
+    public String getEquation(){
+        return "x=" + x + " y=" + y + " b=" + b + " m=" + m;
     }
+
 }

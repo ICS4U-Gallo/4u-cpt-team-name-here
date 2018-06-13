@@ -3,13 +3,13 @@
 @main("Linear"){
     <h1>Linear</h1>
     <p><br/>Enter known fields and press submit (enter 0 for unknown fields)<br/> Click the equation once you enter the one you want<br/></p>
-    <a href="@routes.LinearController.show()">@equation.getEquation</a>
-    @helper.form(CSRF(routes.LinearController.save())){
+    <a href="@routes.MenuController.show()">@equation.getEquation</a>
+    @helper.form(CSRF(routes.MenuController.save())){
         @helper.inputText(linearForm("x"))
         @helper.inputText(linearForm("y"))
         @helper.inputText(linearForm("b"))
         @helper.inputText(linearForm("m"))
         <input type = "submit" value = "Submit Equation">
     }
-    <a href="@routes.LinearController.index()">Go back</a>
+    <a href="@routes.MenuController.index()">Go back</a>
 }

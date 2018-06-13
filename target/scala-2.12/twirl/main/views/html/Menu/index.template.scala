@@ -33,10 +33,9 @@ object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 Seq[Any](format.raw/*1.4*/("""
 """),_display_(/*2.2*/main("Menu")/*2.14*/{_display_(Seq[Any](format.raw/*2.15*/("""
     """),format.raw/*3.5*/("""<h1>Menu</h1>
-    <a href""""),_display_(/*4.14*/routes/*4.20*/.MenuController.linear),format.raw/*4.42*/("""">Linear<a/>
-
-""")))}),format.raw/*6.2*/("""
-"""))
+    <a href=""""),_display_(/*4.15*/routes/*4.21*/.LinearController.linear),format.raw/*4.45*/("""">Linear<br/></a>
+    <a href=""""),_display_(/*5.15*/routes/*5.21*/.HomeController.index()),format.raw/*5.44*/("""">Go back</a>
+""")))}))
       }
     }
   }
@@ -52,11 +51,11 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jun 11 13:15:18 EDT 2018
+                  DATE: Wed Jun 13 13:53:09 EDT 2018
                   SOURCE: C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/app/views/Menu/index.scala.html
-                  HASH: 82c880ceb93b4daeac5e78ab72f2870c4ed36810
-                  MATRIX: 946->1|1042->3|1070->6|1090->18|1128->19|1160->25|1214->53|1228->59|1270->81|1316->98
-                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|36->4|36->4|36->4|38->6
+                  HASH: 6df70cc50920ce714eec286108440b63958b2c4c
+                  MATRIX: 946->1|1042->3|1070->6|1090->18|1128->19|1160->25|1215->54|1229->60|1273->84|1332->117|1346->123|1389->146
+                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|36->4|36->4|36->4|37->5|37->5|37->5
                   -- GENERATED --
               */
           

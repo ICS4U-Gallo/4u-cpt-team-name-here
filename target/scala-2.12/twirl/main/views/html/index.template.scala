@@ -34,7 +34,7 @@ Seq[Any](format.raw/*1.4*/("""
 
 """),_display_(/*3.2*/main("Equation Solver")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
   """),format.raw/*4.3*/("""<h1>Equation Solver</h1>
-  <a href=""""),_display_(/*5.13*/routes/*5.19*/.MenuController.index()),format.raw/*5.42*/("""">Menu</a>
+  <a href=""""),_display_(/*5.13*/routes/*5.19*/.LinearController.index()),format.raw/*5.44*/("""">Menu</a>
 """)))}),format.raw/*6.2*/("""
 """))
       }
@@ -52,10 +52,10 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Jun 11 12:24:18 EDT 2018
+                  DATE: Wed Jun 13 13:53:09 EDT 2018
                   SOURCE: C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/app/views/index.scala.html
-                  HASH: 980e6ec6d632a2243166e9247c90fd743a360b71
-                  MATRIX: 941->1|1037->3|1067->8|1098->31|1137->33|1167->37|1231->75|1245->81|1288->104|1330->117
+                  HASH: 9d47a9e199d0d04943fc09a3e6e49aa724857b5b
+                  MATRIX: 941->1|1037->3|1067->8|1098->31|1137->33|1167->37|1231->75|1245->81|1290->106|1332->119
                   LINES: 28->1|33->1|35->3|35->3|35->3|36->4|37->5|37->5|37->5|38->6
                   -- GENERATED --
               */

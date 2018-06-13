@@ -1,0 +1,7 @@
+@(equation : Linear)
+@import helper._
+@main("show"){
+    <h1>@equation.getEquation</h1>
+    <a href="@routes.MenuController.solveM()">Solve for m<br/></a>
+    <a href="@routes.MenuController.linear()">Go back</a>
+}
