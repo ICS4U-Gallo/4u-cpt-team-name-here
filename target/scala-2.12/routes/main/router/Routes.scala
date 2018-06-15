@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/conf/routes
-// @DATE:Wed Jun 13 13:50:22 EDT 2018
+// @DATE:Thu Jun 14 13:03:22 EDT 2018
 
 package router
 
@@ -20,6 +20,8 @@ class Routes(
   Assets_1: controllers.Assets,
   // @LINE:10
   LinearController_2: controllers.LinearController,
+  // @LINE:16
+  VectorController_3: controllers.VectorController,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -30,12 +32,14 @@ class Routes(
     // @LINE:9
     Assets_1: controllers.Assets,
     // @LINE:10
-    LinearController_2: controllers.LinearController
-  ) = this(errorHandler, HomeController_0, Assets_1, LinearController_2, "/")
+    LinearController_2: controllers.LinearController,
+    // @LINE:16
+    VectorController_3: controllers.VectorController
+  ) = this(errorHandler, HomeController_0, Assets_1, LinearController_2, VectorController_3, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, Assets_1, LinearController_2, prefix)
+    new Routes(errorHandler, HomeController_0, Assets_1, LinearController_2, VectorController_3, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -48,8 +52,14 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu""", """controllers.LinearController.index()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/linear""", """controllers.LinearController.linear()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/linear""", """controllers.LinearController.save()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/show""", """controllers.LinearController.show()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/solveM""", """controllers.LinearController.solveM()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/linear/show""", """controllers.LinearController.show()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/linear/show/solveM""", """controllers.LinearController.solveM()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/solveB""", """controllers.LinearController.solveB()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/vector""", """controllers.VectorController.vector()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/vector""", """controllers.VectorController.save()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/vector/show""", """controllers.VectorController.show()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/vector/show/dotProduct""", """controllers.VectorController.dotProduct()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/vector/show/crossProduct""", """controllers.VectorController.crossProduct()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -149,7 +159,7 @@ class Routes(
 
   // @LINE:13
   private[this] lazy val controllers_LinearController_show5_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/show")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/linear/show")))
   )
   private[this] lazy val controllers_LinearController_show5_invoker = createInvoker(
     LinearController_2.show(),
@@ -159,7 +169,7 @@ class Routes(
       "show",
       Nil,
       "GET",
-      this.prefix + """menu/show""",
+      this.prefix + """menu/linear/show""",
       """""",
       Seq()
     )
@@ -167,7 +177,7 @@ class Routes(
 
   // @LINE:14
   private[this] lazy val controllers_LinearController_solveM6_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/solveM")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/linear/show/solveM")))
   )
   private[this] lazy val controllers_LinearController_solveM6_invoker = createInvoker(
     LinearController_2.solveM(),
@@ -177,7 +187,115 @@ class Routes(
       "solveM",
       Nil,
       "GET",
-      this.prefix + """menu/solveM""",
+      this.prefix + """menu/linear/show/solveM""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:15
+  private[this] lazy val controllers_LinearController_solveB7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/solveB")))
+  )
+  private[this] lazy val controllers_LinearController_solveB7_invoker = createInvoker(
+    LinearController_2.solveB(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.LinearController",
+      "solveB",
+      Nil,
+      "GET",
+      this.prefix + """menu/solveB""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:16
+  private[this] lazy val controllers_VectorController_vector8_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector")))
+  )
+  private[this] lazy val controllers_VectorController_vector8_invoker = createInvoker(
+    VectorController_3.vector(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.VectorController",
+      "vector",
+      Nil,
+      "GET",
+      this.prefix + """menu/vector""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:17
+  private[this] lazy val controllers_VectorController_save9_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector")))
+  )
+  private[this] lazy val controllers_VectorController_save9_invoker = createInvoker(
+    VectorController_3.save(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.VectorController",
+      "save",
+      Nil,
+      "POST",
+      this.prefix + """menu/vector""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:18
+  private[this] lazy val controllers_VectorController_show10_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector/show")))
+  )
+  private[this] lazy val controllers_VectorController_show10_invoker = createInvoker(
+    VectorController_3.show(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.VectorController",
+      "show",
+      Nil,
+      "GET",
+      this.prefix + """menu/vector/show""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:19
+  private[this] lazy val controllers_VectorController_dotProduct11_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector/show/dotProduct")))
+  )
+  private[this] lazy val controllers_VectorController_dotProduct11_invoker = createInvoker(
+    VectorController_3.dotProduct(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.VectorController",
+      "dotProduct",
+      Nil,
+      "GET",
+      this.prefix + """menu/vector/show/dotProduct""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:20
+  private[this] lazy val controllers_VectorController_crossProduct12_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector/show/crossProduct")))
+  )
+  private[this] lazy val controllers_VectorController_crossProduct12_invoker = createInvoker(
+    VectorController_3.crossProduct(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.VectorController",
+      "crossProduct",
+      Nil,
+      "GET",
+      this.prefix + """menu/vector/show/crossProduct""",
       """""",
       Seq()
     )
@@ -226,6 +344,42 @@ class Routes(
     case controllers_LinearController_solveM6_route(params@_) =>
       call { 
         controllers_LinearController_solveM6_invoker.call(LinearController_2.solveM())
+      }
+  
+    // @LINE:15
+    case controllers_LinearController_solveB7_route(params@_) =>
+      call { 
+        controllers_LinearController_solveB7_invoker.call(LinearController_2.solveB())
+      }
+  
+    // @LINE:16
+    case controllers_VectorController_vector8_route(params@_) =>
+      call { 
+        controllers_VectorController_vector8_invoker.call(VectorController_3.vector())
+      }
+  
+    // @LINE:17
+    case controllers_VectorController_save9_route(params@_) =>
+      call { 
+        controllers_VectorController_save9_invoker.call(VectorController_3.save())
+      }
+  
+    // @LINE:18
+    case controllers_VectorController_show10_route(params@_) =>
+      call { 
+        controllers_VectorController_show10_invoker.call(VectorController_3.show())
+      }
+  
+    // @LINE:19
+    case controllers_VectorController_dotProduct11_route(params@_) =>
+      call { 
+        controllers_VectorController_dotProduct11_invoker.call(VectorController_3.dotProduct())
+      }
+  
+    // @LINE:20
+    case controllers_VectorController_crossProduct12_route(params@_) =>
+      call { 
+        controllers_VectorController_crossProduct12_invoker.call(VectorController_3.crossProduct())
       }
   }
 }

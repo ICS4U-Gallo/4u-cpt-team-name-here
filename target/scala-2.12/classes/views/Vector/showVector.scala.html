@@ -1,0 +1,9 @@
+@(equation : models.Vector)
+@main("solve"){
+    <h1>@equation.getVectors</h1>
+    <p>Dot Product Answer = @equation.dotAnswer  (0 by default before button is pressed)</p>
+    <p>Cross Product Answer = @equation.crossAnswer (0 by default before button is pressed)</p>
+    <a href="@routes.VectorController.dotProduct()">Dot product<br/></a>
+    <a href="@routes.VectorController.crossProduct()">Cross product<br/></a>
+    <a href="@routes.VectorController.vector()">Go back</a>
+}

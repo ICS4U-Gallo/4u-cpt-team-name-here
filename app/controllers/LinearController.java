@@ -6,7 +6,6 @@ import play.mvc.*;
 import views.html.Menu.*;
 
 import javax.inject.Inject;
-import java.util.Set;
 
 public class LinearController extends Controller {
     @Inject
@@ -25,10 +24,10 @@ public class LinearController extends Controller {
 
     public Result save(){
         Form<Linear> linearForm = formFactory.form(Linear.class).bindFromRequest();
-        equation.x = Integer.parseInt(linearForm.data().get("x"));
-        equation.y = Integer.parseInt(linearForm.data().get("y"));
-        equation.b = Integer.parseInt(linearForm.data().get("b"));
-        equation.m = Integer.parseInt(linearForm.data().get("m"));
+        equation.x = Double.parseDouble(linearForm.data().get("x"));
+        equation.y = Double.parseDouble(linearForm.data().get("y"));
+        equation.b = Double.parseDouble(linearForm.data().get("b"));
+        equation.m = Double.parseDouble(linearForm.data().get("m"));
         return redirect(routes.LinearController.linear());
     }
 
@@ -38,6 +37,10 @@ public class LinearController extends Controller {
 
     public Result solveM(){
         equation.solveM();
+        return redirect(routes.LinearController.show());
+    }
+    public Result solveB(){
+        equation.solveB();
         return redirect(routes.LinearController.show());
     }
 

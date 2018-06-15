@@ -35,7 +35,8 @@ Seq[Any](format.raw/*1.21*/("""
 """),_display_(/*3.2*/main("show")/*3.14*/{_display_(Seq[Any](format.raw/*3.15*/("""
     """),format.raw/*4.5*/("""<h1>"""),_display_(/*4.10*/equation/*4.18*/.getEquation),format.raw/*4.30*/("""</h1>
     <a href=""""),_display_(/*5.15*/routes/*5.21*/.LinearController.solveM()),format.raw/*5.47*/("""">Solve for m<br/></a>
-    <a href=""""),_display_(/*6.15*/routes/*6.21*/.LinearController.linear()),format.raw/*6.47*/("""">Go back</a>
+    <a href=""""),_display_(/*6.15*/routes/*6.21*/.LinearController.solveB()),format.raw/*6.47*/("""">Solve for b<br/></a>
+    <a href=""""),_display_(/*7.15*/routes/*7.21*/.LinearController.linear()),format.raw/*7.47*/("""">Go back</a>
 """)))}))
       }
     }
@@ -52,11 +53,11 @@ Seq[Any](format.raw/*1.21*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Jun 13 13:53:09 EDT 2018
+                  DATE: Thu Jun 14 09:17:22 EDT 2018
                   SOURCE: C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/app/views/Menu/show.scala.html
-                  HASH: 252805f1a8c4a80e83dcb803a0fda98c7771ea53
-                  MATRIX: 952->1|1044->23|1089->20|1117->41|1137->53|1175->54|1207->60|1238->65|1254->73|1286->85|1333->106|1347->112|1393->138|1457->176|1471->182|1517->208
-                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|36->4|36->4|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6
+                  HASH: 1b5932b9ade9bf64bbcc60a8210b3ec1a088c0f8
+                  MATRIX: 952->1|1044->23|1089->20|1117->41|1137->53|1175->54|1207->60|1238->65|1254->73|1286->85|1333->106|1347->112|1393->138|1457->176|1471->182|1517->208|1581->246|1595->252|1641->278
+                  LINES: 28->1|31->2|34->1|35->3|35->3|35->3|36->4|36->4|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7
                   -- GENERATED --
               */
           

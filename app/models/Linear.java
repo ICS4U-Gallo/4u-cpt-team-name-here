@@ -1,16 +1,13 @@
 package models;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Linear {
-    public int x = 0;
-    public int y = 0;
-    public int b = 0;
-    public int m = 0;
+    public double x = 0;
+    public double y = 0;
+    public double b = 0;
+    public double m = 0;
 
     public Linear(){}
-    public Linear(int x, int y, int b, int m){
+    public Linear(double x, double y, double b, double m){
         this.x = x;
         this.y = y;
         this.b = b;
@@ -23,6 +20,10 @@ public class Linear {
 
     public String getEquation(){
         return "x=" + x + " y=" + y + " b=" + b + " m=" + m;
+    }
+
+    public void solveB(){
+        this.b = this.y - this.m * this.x;
     }
 
 }

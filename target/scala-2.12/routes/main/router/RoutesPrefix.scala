@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/conf/routes
-// @DATE:Wed Jun 13 13:50:22 EDT 2018
+// @DATE:Thu Jun 14 13:03:22 EDT 2018
 
 
 package router {
