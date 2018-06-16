@@ -1,4 +1,4 @@
-    package controllers;
+package controllers;
 import models.Linear;
 import play.data.Form;
 import play.data.FormFactory;
@@ -7,7 +7,9 @@ import views.html.Menu.*;
 
 import javax.inject.Inject;
 
-public class LinearController extends Controller {
+import static java.lang.Double.NaN;
+
+    public class LinearController extends Controller {
     @Inject
     FormFactory formFactory;
 
@@ -24,10 +26,30 @@ public class LinearController extends Controller {
 
     public Result save(){
         Form<Linear> linearForm = formFactory.form(Linear.class).bindFromRequest();
-        equation.x = Double.parseDouble(linearForm.data().get("x"));
-        equation.y = Double.parseDouble(linearForm.data().get("y"));
-        equation.b = Double.parseDouble(linearForm.data().get("b"));
-        equation.m = Double.parseDouble(linearForm.data().get("m"));
+        try {
+            equation.x = Double.parseDouble(linearForm.data().get("x"));
+        }
+        catch(NumberFormatException e){
+            equation.x = NaN;
+        }
+        try {
+            equation.y = Double.parseDouble(linearForm.data().get("y"));
+        }
+        catch(NumberFormatException e){
+            equation.y = NaN;
+        }
+        try {
+            equation.b = Double.parseDouble(linearForm.data().get("b"));
+        }
+        catch(NumberFormatException e){
+            equation.b = NaN;
+        }
+        try {
+            equation.m = Double.parseDouble(linearForm.data().get("m"));
+        }
+        catch(NumberFormatException e){
+            equation.m = NaN;
+        }
         return redirect(routes.LinearController.linear());
     }
 

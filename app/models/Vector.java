@@ -1,17 +1,17 @@
 package models;
 
 public class Vector {
-    public int x1;
-    public int y1;
-    public int z1;
-    public int x2;
-    public int y2;
-    public int z2;
-    public int dotAnswer = 0;
+    public double x1;
+    public double y1;
+    public double z1;
+    public double x2;
+    public double y2;
+    public double z2;
+    public double dotAnswer = 0;
     public String crossAnswer = "0";
 
     public Vector (){}
-    public Vector (int x1, int y1, int z1, int x2, int y2,int z2){
+    public Vector (double x1, double y1, double z1, double x2, double y2,double z2){
         this.x1 = x1;
         this.y1 = y1;
         this.z1 = z1;

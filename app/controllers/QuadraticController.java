@@ -8,6 +8,8 @@ import views.html.Quadratic.*;
 
 import javax.inject.Inject;
 
+import static java.lang.Double.NaN;
+
 public class QuadraticController extends Controller{
     @Inject
     FormFactory formFactory;
@@ -25,9 +27,24 @@ public class QuadraticController extends Controller{
 
     public Result save(){
         Form<Quadratic> quadraticForm = formFactory.form(Quadratic.class).bindFromRequest();
-        quadNumbers.b = Double.parseDouble(quadraticForm.data().get("b"));
-        quadNumbers.a = Double.parseDouble(quadraticForm.data().get("a"));
-        quadNumbers.c = Double.parseDouble(quadraticForm.data().get("c"));
+        try {
+            quadNumbers.b = Double.parseDouble(quadraticForm.data().get("b"));
+        }
+        catch(NumberFormatException e){
+            quadNumbers.b = NaN;
+        }
+        try {
+            quadNumbers.a = Double.parseDouble(quadraticForm.data().get("a"));
+        }
+        catch (NumberFormatException e){
+            quadNumbers.a = NaN;
+        }
+        try {
+            quadNumbers.c = Double.parseDouble(quadraticForm.data().get("c"));
+        }
+        catch (NumberFormatException e){
+            quadNumbers.c = NaN;
+        }
         return redirect(routes.QuadraticController.quadratic());
     }
 

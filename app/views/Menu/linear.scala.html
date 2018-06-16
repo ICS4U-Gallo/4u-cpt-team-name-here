@@ -2,7 +2,7 @@
 @import helper._
 @main("Linear"){
     <h1>Linear</h1>
-    <p><br/>Enter known fields and press submit (enter 0 for unknown fields)<br/> Click the equation once you enter the one you want<br/></p>
+    <p><br/>Enter known fields and press submit (Leave unknown fields blank)<br/> Click the equation once you enter the one you want<br/></p>
     <a href="@routes.LinearController.show()">@equation.getEquation</a>
     @helper.form(CSRF(routes.LinearController.save())){
         @helper.inputText(linearForm("x"))

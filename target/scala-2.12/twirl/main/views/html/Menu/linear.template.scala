@@ -34,7 +34,7 @@ object linear extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Htm
 Seq[Any](format.raw/*1.48*/("""
 """),_display_(/*3.2*/main("Linear")/*3.16*/{_display_(Seq[Any](format.raw/*3.17*/("""
     """),format.raw/*4.5*/("""<h1>Linear</h1>
-    <p><br/>Enter known fields and press submit (enter 0 for unknown fields)<br/> Click the equation once you enter the one you want<br/></p>
+    <p><br/>Enter known fields and press submit (Leave unknown fields blank)<br/> Click the equation once you enter the one you want<br/></p>
     <a href=""""),_display_(/*6.15*/routes/*6.21*/.LinearController.show()),format.raw/*6.45*/("""">"""),_display_(/*6.48*/equation/*6.56*/.getEquation),format.raw/*6.68*/("""</a>
     """),_display_(/*7.6*/helper/*7.12*/.form(CSRF(routes.LinearController.save()))/*7.55*/{_display_(Seq[Any](format.raw/*7.56*/("""
         """),_display_(/*8.10*/helper/*8.16*/.inputText(linearForm("x"))),format.raw/*8.43*/("""
@@ -61,9 +61,9 @@ Seq[Any](format.raw/*1.48*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Jun 16 00:36:14 EDT 2018
+                  DATE: Sat Jun 16 15:19:56 EDT 2018
                   SOURCE: C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/app/views/Menu/linear.scala.html
-                  HASH: cd8fcb34acc960df4be14cdbaa14936ff72b92f2
+                  HASH: c17977a7271a781d541805f4e171b19030847b44
                   MATRIX: 967->1|1086->50|1131->47|1159->68|1181->82|1219->83|1251->89|1451->263|1465->269|1509->293|1538->296|1554->304|1586->316|1622->327|1636->333|1687->376|1725->377|1762->388|1776->394|1823->421|1860->432|1874->438|1921->465|1959->476|1974->482|2022->509|2060->520|2075->526|2123->553|2160->563|2246->619|2279->625|2316->635|2331->641|2377->666|2423->682
                   LINES: 28->1|31->2|34->1|35->3|35->3|35->3|36->4|38->6|38->6|38->6|38->6|38->6|38->6|39->7|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|45->13|46->14|46->14|46->14|46->14|47->15
                   -- GENERATED --
