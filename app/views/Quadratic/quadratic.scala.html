@@ -1,0 +1,14 @@
+@(quadratic : models.Quadratic)(quadraticForm : Form[models.Quadratic])
+@import helper._
+@main("Quadratic"){
+<h1>Quadratic<br/></h1>
+<p><br/>Enter known fields and press submit<br/> Click the equation once you enter the fields<br/></p>
+<a href="@routes.QuadraticController.show()">@quadratic.getEquation</a>
+@helper.form(CSRF(routes.QuadraticController.save())){
+@helper.inputText(quadraticForm("b"))
+@helper.inputText(quadraticForm("a"))
+@helper.inputText(quadraticForm("c"))
+<input type = "submit" value = "Submit Equation">
+}
+<a href="@routes.LinearController.index()">Go back</a>
+}

@@ -1,6 +1,6 @@
 package models;
 
-public class Linear {
+public class Linear{
     public double x = 0;
     public double y = 0;
     public double b = 0;

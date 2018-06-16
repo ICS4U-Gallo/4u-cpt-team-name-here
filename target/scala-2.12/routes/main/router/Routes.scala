@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/conf/routes
-// @DATE:Thu Jun 14 13:03:22 EDT 2018
+// @SOURCE:C:/Users/farbo/Farbod/4u-cpt-team-name-here/conf/routes
+// @DATE:Fri Jun 15 14:20:08 EDT 2018
 
 package router
 
@@ -17,11 +17,13 @@ class Routes(
   // @LINE:6
   HomeController_0: controllers.HomeController,
   // @LINE:9
-  Assets_1: controllers.Assets,
+  Assets_3: controllers.Assets,
   // @LINE:10
-  LinearController_2: controllers.LinearController,
+  LinearController_1: controllers.LinearController,
   // @LINE:16
-  VectorController_3: controllers.VectorController,
+  VectorController_4: controllers.VectorController,
+  // @LINE:21
+  QuadraticController_2: controllers.QuadraticController,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -30,16 +32,18 @@ class Routes(
     // @LINE:6
     HomeController_0: controllers.HomeController,
     // @LINE:9
-    Assets_1: controllers.Assets,
+    Assets_3: controllers.Assets,
     // @LINE:10
-    LinearController_2: controllers.LinearController,
+    LinearController_1: controllers.LinearController,
     // @LINE:16
-    VectorController_3: controllers.VectorController
-  ) = this(errorHandler, HomeController_0, Assets_1, LinearController_2, VectorController_3, "/")
+    VectorController_4: controllers.VectorController,
+    // @LINE:21
+    QuadraticController_2: controllers.QuadraticController
+  ) = this(errorHandler, HomeController_0, Assets_3, LinearController_1, VectorController_4, QuadraticController_2, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, Assets_1, LinearController_2, VectorController_3, prefix)
+    new Routes(errorHandler, HomeController_0, Assets_3, LinearController_1, VectorController_4, QuadraticController_2, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -60,6 +64,10 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/vector/show""", """controllers.VectorController.show()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/vector/show/dotProduct""", """controllers.VectorController.dotProduct()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/vector/show/crossProduct""", """controllers.VectorController.crossProduct()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/quadratic""", """controllers.QuadraticController.quadratic()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/quadratic""", """controllers.QuadraticController.save()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/quadratic/show""", """controllers.QuadraticController.show()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """menu/quadratic/show/solveX""", """controllers.QuadraticController.solveX()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -90,7 +98,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_versioned1_invoker = createInvoker(
-    Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
+    Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -108,7 +116,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu")))
   )
   private[this] lazy val controllers_LinearController_index2_invoker = createInvoker(
-    LinearController_2.index(),
+    LinearController_1.index(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LinearController",
@@ -126,7 +134,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/linear")))
   )
   private[this] lazy val controllers_LinearController_linear3_invoker = createInvoker(
-    LinearController_2.linear(),
+    LinearController_1.linear(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LinearController",
@@ -144,7 +152,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/linear")))
   )
   private[this] lazy val controllers_LinearController_save4_invoker = createInvoker(
-    LinearController_2.save(),
+    LinearController_1.save(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LinearController",
@@ -162,7 +170,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/linear/show")))
   )
   private[this] lazy val controllers_LinearController_show5_invoker = createInvoker(
-    LinearController_2.show(),
+    LinearController_1.show(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LinearController",
@@ -180,7 +188,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/linear/show/solveM")))
   )
   private[this] lazy val controllers_LinearController_solveM6_invoker = createInvoker(
-    LinearController_2.solveM(),
+    LinearController_1.solveM(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LinearController",
@@ -198,7 +206,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/solveB")))
   )
   private[this] lazy val controllers_LinearController_solveB7_invoker = createInvoker(
-    LinearController_2.solveB(),
+    LinearController_1.solveB(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LinearController",
@@ -216,7 +224,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector")))
   )
   private[this] lazy val controllers_VectorController_vector8_invoker = createInvoker(
-    VectorController_3.vector(),
+    VectorController_4.vector(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VectorController",
@@ -234,7 +242,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector")))
   )
   private[this] lazy val controllers_VectorController_save9_invoker = createInvoker(
-    VectorController_3.save(),
+    VectorController_4.save(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VectorController",
@@ -252,7 +260,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector/show")))
   )
   private[this] lazy val controllers_VectorController_show10_invoker = createInvoker(
-    VectorController_3.show(),
+    VectorController_4.show(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VectorController",
@@ -270,7 +278,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector/show/dotProduct")))
   )
   private[this] lazy val controllers_VectorController_dotProduct11_invoker = createInvoker(
-    VectorController_3.dotProduct(),
+    VectorController_4.dotProduct(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VectorController",
@@ -288,7 +296,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/vector/show/crossProduct")))
   )
   private[this] lazy val controllers_VectorController_crossProduct12_invoker = createInvoker(
-    VectorController_3.crossProduct(),
+    VectorController_4.crossProduct(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.VectorController",
@@ -296,6 +304,78 @@ class Routes(
       Nil,
       "GET",
       this.prefix + """menu/vector/show/crossProduct""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:21
+  private[this] lazy val controllers_QuadraticController_quadratic13_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/quadratic")))
+  )
+  private[this] lazy val controllers_QuadraticController_quadratic13_invoker = createInvoker(
+    QuadraticController_2.quadratic(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.QuadraticController",
+      "quadratic",
+      Nil,
+      "GET",
+      this.prefix + """menu/quadratic""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:22
+  private[this] lazy val controllers_QuadraticController_save14_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/quadratic")))
+  )
+  private[this] lazy val controllers_QuadraticController_save14_invoker = createInvoker(
+    QuadraticController_2.save(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.QuadraticController",
+      "save",
+      Nil,
+      "POST",
+      this.prefix + """menu/quadratic""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:23
+  private[this] lazy val controllers_QuadraticController_show15_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/quadratic/show")))
+  )
+  private[this] lazy val controllers_QuadraticController_show15_invoker = createInvoker(
+    QuadraticController_2.show(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.QuadraticController",
+      "show",
+      Nil,
+      "GET",
+      this.prefix + """menu/quadratic/show""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:24
+  private[this] lazy val controllers_QuadraticController_solveX16_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("menu/quadratic/show/solveX")))
+  )
+  private[this] lazy val controllers_QuadraticController_solveX16_invoker = createInvoker(
+    QuadraticController_2.solveX(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.QuadraticController",
+      "solveX",
+      Nil,
+      "GET",
+      this.prefix + """menu/quadratic/show/solveX""",
       """""",
       Seq()
     )
@@ -313,73 +393,97 @@ class Routes(
     // @LINE:9
     case controllers_Assets_versioned1_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned1_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned1_invoker.call(Assets_3.versioned(path, file))
       }
   
     // @LINE:10
     case controllers_LinearController_index2_route(params@_) =>
       call { 
-        controllers_LinearController_index2_invoker.call(LinearController_2.index())
+        controllers_LinearController_index2_invoker.call(LinearController_1.index())
       }
   
     // @LINE:11
     case controllers_LinearController_linear3_route(params@_) =>
       call { 
-        controllers_LinearController_linear3_invoker.call(LinearController_2.linear())
+        controllers_LinearController_linear3_invoker.call(LinearController_1.linear())
       }
   
     // @LINE:12
     case controllers_LinearController_save4_route(params@_) =>
       call { 
-        controllers_LinearController_save4_invoker.call(LinearController_2.save())
+        controllers_LinearController_save4_invoker.call(LinearController_1.save())
       }
   
     // @LINE:13
     case controllers_LinearController_show5_route(params@_) =>
       call { 
-        controllers_LinearController_show5_invoker.call(LinearController_2.show())
+        controllers_LinearController_show5_invoker.call(LinearController_1.show())
       }
   
     // @LINE:14
     case controllers_LinearController_solveM6_route(params@_) =>
       call { 
-        controllers_LinearController_solveM6_invoker.call(LinearController_2.solveM())
+        controllers_LinearController_solveM6_invoker.call(LinearController_1.solveM())
       }
   
     // @LINE:15
     case controllers_LinearController_solveB7_route(params@_) =>
       call { 
-        controllers_LinearController_solveB7_invoker.call(LinearController_2.solveB())
+        controllers_LinearController_solveB7_invoker.call(LinearController_1.solveB())
       }
   
     // @LINE:16
     case controllers_VectorController_vector8_route(params@_) =>
       call { 
-        controllers_VectorController_vector8_invoker.call(VectorController_3.vector())
+        controllers_VectorController_vector8_invoker.call(VectorController_4.vector())
       }
   
     // @LINE:17
     case controllers_VectorController_save9_route(params@_) =>
       call { 
-        controllers_VectorController_save9_invoker.call(VectorController_3.save())
+        controllers_VectorController_save9_invoker.call(VectorController_4.save())
       }
   
     // @LINE:18
     case controllers_VectorController_show10_route(params@_) =>
       call { 
-        controllers_VectorController_show10_invoker.call(VectorController_3.show())
+        controllers_VectorController_show10_invoker.call(VectorController_4.show())
       }
   
     // @LINE:19
     case controllers_VectorController_dotProduct11_route(params@_) =>
       call { 
-        controllers_VectorController_dotProduct11_invoker.call(VectorController_3.dotProduct())
+        controllers_VectorController_dotProduct11_invoker.call(VectorController_4.dotProduct())
       }
   
     // @LINE:20
     case controllers_VectorController_crossProduct12_route(params@_) =>
       call { 
-        controllers_VectorController_crossProduct12_invoker.call(VectorController_3.crossProduct())
+        controllers_VectorController_crossProduct12_invoker.call(VectorController_4.crossProduct())
+      }
+  
+    // @LINE:21
+    case controllers_QuadraticController_quadratic13_route(params@_) =>
+      call { 
+        controllers_QuadraticController_quadratic13_invoker.call(QuadraticController_2.quadratic())
+      }
+  
+    // @LINE:22
+    case controllers_QuadraticController_save14_route(params@_) =>
+      call { 
+        controllers_QuadraticController_save14_invoker.call(QuadraticController_2.save())
+      }
+  
+    // @LINE:23
+    case controllers_QuadraticController_show15_route(params@_) =>
+      call { 
+        controllers_QuadraticController_show15_invoker.call(QuadraticController_2.show())
+      }
+  
+    // @LINE:24
+    case controllers_QuadraticController_solveX16_route(params@_) =>
+      call { 
+        controllers_QuadraticController_solveX16_invoker.call(QuadraticController_2.solveX())
       }
   }
 }

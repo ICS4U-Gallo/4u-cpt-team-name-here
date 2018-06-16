@@ -1,8 +1,46 @@
-2018-06-15 12:32:42,544 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-3 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2018-06-15 12:32:42,713 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2018-06-15 14:28:05,286 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-16 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-06-15 14:28:05,642 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-16 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2018-06-15 12:32:42,720 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
+2018-06-15 14:28:05,662 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev)
+2018-06-15 14:28:06,989 [ERROR] from akka.actor.ActorSystemImpl in application-akka.actor.default-dispatcher-5 - Uncaught error from thread [application-akka.actor.default-dispatcher-9]: javax/xml/bind/DatatypeConverter, shutting down JVM since 'akka.jvm-exit-on-fatal-error' is enabled for ActorSystem[application]
+java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter
+	at io.jsonwebtoken.impl.Base64Codec.decode(Base64Codec.java:26)
+	at io.jsonwebtoken.impl.DefaultJwtBuilder.signWith(DefaultJwtBuilder.java:106)
+	at play.api.mvc.JWTCookieDataCodec$JWTFormatter.format(Cookie.scala:718)
+	at play.api.mvc.JWTCookieDataCodec.encode(Cookie.scala:577)
+	at play.api.mvc.JWTCookieDataCodec.encode$(Cookie.scala:575)
+	at play.api.mvc.DefaultJWTCookieDataCodec.encode(Cookie.scala:768)
+	at play.api.mvc.FallbackCookieDataCodec.encode(Cookie.scala:742)
+	at play.api.mvc.FallbackCookieDataCodec.encode$(Cookie.scala:741)
+	at play.api.mvc.DefaultSessionCookieBaker.encode(Session.scala:95)
+	at play.api.mvc.CookieBaker.encodeAsCookie(Cookie.scala:414)
+	at play.api.mvc.CookieBaker.encodeAsCookie$(Cookie.scala:413)
+	at play.api.mvc.DefaultSessionCookieBaker.encodeAsCookie(Session.scala:95)
+	at play.api.mvc.Result.$anonfun$bakeCookies$2(Results.scala:297)
+	at scala.Option.map(Option.scala:146)
+	at play.api.mvc.Result.bakeCookies(Results.scala:296)
+	at play.core.server.common.ServerResultUtils.prepareCookies(ServerResultUtils.scala:225)
+	at play.core.server.AkkaHttpServer.$anonfun$runAction$5(AkkaHttpServer.scala:323)
+	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:304)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverter
+	at java.base/java.net.URLClassLoader.findClass(Unknown Source)
+	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+	... 31 common frames omitted

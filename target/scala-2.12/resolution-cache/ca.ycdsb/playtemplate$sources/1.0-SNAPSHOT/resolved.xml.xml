@@ -4,7 +4,7 @@
 		module="playtemplate$sources"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20180611120040"
+		publication="20180612141842"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

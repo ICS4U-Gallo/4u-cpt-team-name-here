@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/conf/routes
-// @DATE:Thu Jun 14 13:03:22 EDT 2018
+// @SOURCE:C:/Users/farbo/Farbod/4u-cpt-team-name-here/conf/routes
+// @DATE:Fri Jun 15 14:20:08 EDT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -65,6 +65,26 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "menu/vector"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:9
+  class ReverseAssets(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:9
+    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Assets.versioned",
+      """
+        function(file1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
         }
       """
     )
@@ -161,20 +181,50 @@ package controllers.javascript {
   
   }
 
-  // @LINE:9
-  class ReverseAssets(_prefix: => String) {
+  // @LINE:21
+  class ReverseQuadraticController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:9
-    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Assets.versioned",
+    // @LINE:23
+    def show: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.QuadraticController.show",
       """
-        function(file1) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "menu/quadratic/show"})
+        }
+      """
+    )
+  
+    // @LINE:22
+    def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.QuadraticController.save",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "menu/quadratic"})
+        }
+      """
+    )
+  
+    // @LINE:24
+    def solveX: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.QuadraticController.solveX",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "menu/quadratic/show/solveX"})
+        }
+      """
+    )
+  
+    // @LINE:21
+    def quadratic: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.QuadraticController.quadratic",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "menu/quadratic"})
         }
       """
     )
