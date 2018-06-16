@@ -2,8 +2,8 @@ package models;
 import java.lang.Math;
 
 public class Quadratic {
-    public double b = 0;
     public double a = 0;
+    public double b = 0;
     public double c = 0;
     public double posX = 0;
     public double negX = 0;
@@ -21,6 +21,6 @@ public class Quadratic {
     }
 
     public String getEquation(){
-        return "b=" + b + " a=" + a + " c=" + c;
+        return "a=" + a + " b=" + b + " c=" + c;
     }
 }

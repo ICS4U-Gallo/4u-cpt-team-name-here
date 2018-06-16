@@ -35,7 +35,8 @@ Seq[Any](format.raw/*1.4*/("""
     """),format.raw/*3.5*/("""<h1>Menu</h1>
     <a href=""""),_display_(/*4.15*/routes/*4.21*/.LinearController.linear),format.raw/*4.45*/("""">Linear<br/></a>
     <a href=""""),_display_(/*5.15*/routes/*5.21*/.VectorController.vector),format.raw/*5.45*/("""">Vectors<br/></a>
-    <a href=""""),_display_(/*6.15*/routes/*6.21*/.HomeController.index()),format.raw/*6.44*/("""">Go back</a>
+    <a href=""""),_display_(/*6.15*/routes/*6.21*/.QuadraticController.quadratic()),format.raw/*6.53*/("""">Quadratic<br/></a>
+    <a href=""""),_display_(/*7.15*/routes/*7.21*/.HomeController.index()),format.raw/*7.44*/("""">Go back</a>
 """)))}))
       }
     }
@@ -52,11 +53,11 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Jun 15 13:12:51 EDT 2018
-                  SOURCE: C:/Users/farbo/Farbod/4u-cpt-team-name-here/app/views/Menu/index.scala.html
-                  HASH: fa1ce7fe909ca12567cb1d7adfedf94d636ad54d
-                  MATRIX: 946->1|1042->3|1070->6|1090->18|1128->19|1160->25|1215->54|1229->60|1273->84|1332->117|1346->123|1390->147|1450->181|1464->187|1507->210
-                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|36->4|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6
+                  DATE: Sat Jun 16 00:41:42 EDT 2018
+                  SOURCE: C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/app/views/Menu/index.scala.html
+                  HASH: dc4768c30204b4a0049510bc9af04cf91aa6b981
+                  MATRIX: 946->1|1042->3|1070->6|1090->18|1128->19|1160->25|1215->54|1229->60|1273->84|1332->117|1346->123|1390->147|1450->181|1464->187|1516->219|1578->255|1592->261|1635->284
+                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|36->4|36->4|36->4|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7
                   -- GENERATED --
               */
           

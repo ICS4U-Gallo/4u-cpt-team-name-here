@@ -37,8 +37,8 @@ Seq[Any](format.raw/*1.72*/("""
 <p><br/>Enter known fields and press submit<br/> Click the equation once you enter the fields<br/></p>
 <a href=""""),_display_(/*6.11*/routes/*6.17*/.QuadraticController.show()),format.raw/*6.44*/("""">"""),_display_(/*6.47*/quadratic/*6.56*/.getEquation),format.raw/*6.68*/("""</a>
 """),_display_(/*7.2*/helper/*7.8*/.form(CSRF(routes.QuadraticController.save()))/*7.54*/{_display_(Seq[Any](format.raw/*7.55*/("""
-"""),_display_(/*8.2*/helper/*8.8*/.inputText(quadraticForm("b"))),format.raw/*8.38*/("""
-"""),_display_(/*9.2*/helper/*9.8*/.inputText(quadraticForm("a"))),format.raw/*9.38*/("""
+"""),_display_(/*8.2*/helper/*8.8*/.inputText(quadraticForm("a"))),format.raw/*8.38*/("""
+"""),_display_(/*9.2*/helper/*9.8*/.inputText(quadraticForm("b"))),format.raw/*9.38*/("""
 """),_display_(/*10.2*/helper/*10.8*/.inputText(quadraticForm("c"))),format.raw/*10.38*/("""
 """),format.raw/*11.1*/("""<input type = "submit" value = "Submit Equation">
 """)))}),format.raw/*12.2*/("""
@@ -59,9 +59,9 @@ Seq[Any](format.raw/*1.72*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Jun 15 14:20:29 EDT 2018
-                  SOURCE: C:/Users/farbo/Farbod/4u-cpt-team-name-here/app/views/Quadratic/quadratic.scala.html
-                  HASH: ab73e3bd629d47e0cb2920b7108ac1dbf2c852f8
+                  DATE: Sat Jun 16 00:48:02 EDT 2018
+                  SOURCE: C:/Users/doubleAbatteryman/Abtin/4u-cpt-team-name-here/app/views/Quadratic/quadratic.scala.html
+                  HASH: 6bb8ae266402f28304a54d2267a92637424763c6
                   MATRIX: 995->1|1138->74|1183->71|1211->92|1236->109|1274->110|1302->112|1467->251|1481->257|1528->284|1557->287|1574->296|1606->308|1638->315|1651->321|1705->367|1743->368|1771->371|1784->377|1834->407|1862->410|1875->416|1925->446|1954->449|1968->455|2019->485|2048->487|2130->539|2159->541|2196->551|2211->557|2257->582
                   LINES: 28->1|31->2|34->1|35->3|35->3|35->3|36->4|38->6|38->6|38->6|38->6|38->6|38->6|39->7|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|44->12|45->13|45->13|45->13|45->13
                   -- GENERATED --

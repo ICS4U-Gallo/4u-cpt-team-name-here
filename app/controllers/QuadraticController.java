@@ -4,7 +4,7 @@ import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.*;
 import views.html.Menu.*;
-import views.html.Quadratic.quadratic;
+import views.html.Quadratic.*;
 
 import javax.inject.Inject;
 
@@ -32,11 +32,11 @@ public class QuadraticController extends Controller{
     }
 
     public Result show(){
-        return ok(show.render(quadNumbers));
+        return ok(showQuadratic.render(quadNumbers));
     }
 
     public Result solveX(){
         quadNumbers.solveX();
-        return redirect(routes.QuadraticController.solveX());
+        return redirect(routes.QuadraticController.show());
     }
 }
