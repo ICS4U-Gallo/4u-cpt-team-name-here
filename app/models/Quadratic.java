@@ -2,9 +2,9 @@ package models;
 import java.lang.Math;
 
 public class Quadratic {
-    public double a = 0;
-    public double b = 0;
-    public double c = 0;
+    public double a;
+    public double b;
+    public double c;
     public double posX = 0;
     public double negX = 0;
 

@@ -1,10 +1,10 @@
 package models;
 
 public class Linear{
-    public double x = 0;
-    public double y = 0;
-    public double b = 0;
-    public double m = 0;
+    public double x;
+    public double y;
+    public double b;
+    public double m;
 
     public Linear(){}
     public Linear(double x, double y, double b, double m){
