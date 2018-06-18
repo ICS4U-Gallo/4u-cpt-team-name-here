@@ -1,0 +1,8 @@
+@(equation : models.Quadratic)
+@main("solveX"){
+<h1>@equation.getEquation</h1>
+<p>Positive x = @equation.posX (0 by default before button is pressed)</p>
+<p>Negative x = @equation.negX  (0 by default before button is pressed)</p>
+<a href="@routes.QuadraticController.solveX()">Solve for X<br/></a>
+<a href="@routes.QuadraticController.quadratic()">Go back</a>
+}

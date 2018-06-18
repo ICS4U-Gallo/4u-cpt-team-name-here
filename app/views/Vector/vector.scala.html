@@ -1,0 +1,17 @@
+@(vector : models.Vector)(vectorForm : Form[models.Vector])
+@import helper._
+@main("Vector"){
+    <h1>Vectors<br/></h1>
+    <p>Enter the coordinates of the two vectors you are going to be looking at <br/>(Any fields left empty will be filled with NaN and you will not be able to preform any cross or dot products on the following page)<br/>Click the vectors when you think you have the right ones inputted<br/></p>
+    <a href="@routes.VectorController.show()">@vector.getVectors</a>
+    @helper.form(CSRF(routes.VectorController.save())){
+        @helper.inputText(vectorForm("x1"))
+        @helper.inputText(vectorForm("y1"))
+        @helper.inputText(vectorForm("z1"))
+        @helper.inputText(vectorForm("x2"))
+        @helper.inputText(vectorForm("y2"))
+        @helper.inputText(vectorForm("z2"))
+        <input type = "submit" value = "Submit Equation">
+    }
+    <a href="@routes.LinearController.index()">Go back</a>
+}
